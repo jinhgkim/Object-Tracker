@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
                 break
 
             # Run YOLO11 tracking on the frame, persisting tracks between frames
-            results = model.track(frame, persist=True)
+            results = model.track(frame, persist=True, classes=[0])
 
             # Visualize the results on the frame
             annotated_frame = results[0].plot()
